@@ -1,15 +1,10 @@
 # todo_list.py
 # LR
 # Aug 18 2023
-# Work in progress.
-# To Do List - Basic Python
-
-
-import os
+# To Do List - Basic Python Program Exercise
 
 # Initialize an empty list to store tasks
 tasks = []
-os.system('cls')
 
 # Function to add a task
 def add_task(task):  # where task in parenthesis is the action of the user wants to save
@@ -18,8 +13,12 @@ def add_task(task):  # where task in parenthesis is the action of the user wants
 
 # Function to remove a task
 def remove_task(task):
-    tasks.remove(task) # removing from list
-    print("Task removed from list", task)
+    if task in tasks:
+        tasks.remove(task) # removing from list
+        print("Task removed from list", task)
+    else:
+        print("Task not found in the list.")   
+
 
 # Function to display all tasks
 def display_tasks():
@@ -48,7 +47,7 @@ while True:
     elif choice == "3":
         remove_task(task)
     elif choice == "4":
-        print("Exiting the To-Do List Manager. Adios!")
+        print("Exiting the To-Do List Manager. Goodbye!")
         break
     else:
         print("Invalid choice. Please select a valid option.")
